@@ -114,4 +114,4 @@ POST /pedidos
 
 ## 5. Link do repositório
 
-https://github.com/SEU-USUARIO/baozi-store
+https://github.com/Tiagopalmeira/baozi-store
