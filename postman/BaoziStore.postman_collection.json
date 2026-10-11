@@ -1,0 +1,117 @@
+{
+	"info": {
+		"name": "Baozi Store API",
+		"description": "Requisições da API REST Baozi Store. Rode na ordem: Clientes -> Produtos -> Pedidos -> Deletes.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{ "key": "baseUrl", "value": "http://localhost:8081" }
+	],
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "POST - Criar cliente",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": { "mode": "raw", "raw": "{\n    \"nome\": \"TiagoSantanaPalmeira5258014\",\n    \"clienteDesde\": \"2026-10-10\"\n}" },
+						"url": "{{baseUrl}}/clientes"
+					}
+				},
+				{
+					"name": "GET - Listar clientes",
+					"request": { "method": "GET", "url": "{{baseUrl}}/clientes" }
+				},
+				{
+					"name": "GET - Cliente por ID",
+					"request": { "method": "GET", "url": "{{baseUrl}}/clientes/1" }
+				},
+				{
+					"name": "PUT - Atualizar cliente (opcional)",
+					"request": {
+						"method": "PUT",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": { "mode": "raw", "raw": "{\n    \"nome\": \"TiagoSantanaPalmeira5258014\",\n    \"clienteDesde\": \"2026-10-01\"\n}" },
+						"url": "{{baseUrl}}/clientes/1"
+					}
+				},
+				{
+					"name": "DELETE - Apagar cliente",
+					"request": { "method": "DELETE", "url": "{{baseUrl}}/clientes/1" }
+				}
+			]
+		},
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "POST - Criar produto",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": { "mode": "raw", "raw": "{\n    \"nome\": \"Baozi de Porco\",\n    \"preco\": 8.50,\n    \"estoque\": true\n}" },
+						"url": "{{baseUrl}}/produtos"
+					}
+				},
+				{
+					"name": "GET - Listar produtos",
+					"request": { "method": "GET", "url": "{{baseUrl}}/produtos" }
+				},
+				{
+					"name": "GET - Produto por ID",
+					"request": { "method": "GET", "url": "{{baseUrl}}/produtos/1" }
+				},
+				{
+					"name": "PUT - Atualizar produto (opcional)",
+					"request": {
+						"method": "PUT",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": { "mode": "raw", "raw": "{\n    \"nome\": \"Baozi de Porco\",\n    \"preco\": 9.00,\n    \"estoque\": true\n}" },
+						"url": "{{baseUrl}}/produtos/1"
+					}
+				},
+				{
+					"name": "DELETE - Apagar produto",
+					"request": { "method": "DELETE", "url": "{{baseUrl}}/produtos/1" }
+				}
+			]
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "POST - Criar pedido",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": { "mode": "raw", "raw": "{\n    \"clienteId\": 1,\n    \"produtoId\": 1,\n    \"quantidade\": 6\n}" },
+						"url": "{{baseUrl}}/pedidos"
+					}
+				},
+				{
+					"name": "GET - Listar pedidos",
+					"request": { "method": "GET", "url": "{{baseUrl}}/pedidos" }
+				},
+				{
+					"name": "GET - Pedido por ID",
+					"request": { "method": "GET", "url": "{{baseUrl}}/pedidos/1" }
+				},
+				{
+					"name": "PUT - Atualizar pedido (opcional)",
+					"request": {
+						"method": "PUT",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": { "mode": "raw", "raw": "{\n    \"clienteId\": 1,\n    \"produtoId\": 1,\n    \"quantidade\": 10\n}" },
+						"url": "{{baseUrl}}/pedidos/1"
+					}
+				},
+				{
+					"name": "DELETE - Apagar pedido",
+					"request": { "method": "DELETE", "url": "{{baseUrl}}/pedidos/1" }
+				}
+			]
+		}
+	]
+}
